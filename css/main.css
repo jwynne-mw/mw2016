@@ -14,16 +14,34 @@ div {
 	position: relative;
 }
 .container {
-	min-width: 320px;
+	min-width: 280px;
+}
+
+.notransition {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
 }
 
 
 
 
-/*main navigation bar*/
+/* main navigation *****************************************************************************/
 nav {
+	position: fixed;
 	background: #f5f5f5;
-	margin:15px 0;
+	top:0;
+	left:0;
+	width: 100%;
+	z-index: 10000;
+	margin:0;
+	-webkit-transition: all .5s; /* Safari */
+  transition: all .5s;
+}
+
+.nav-show {
+	margin: 15px 0;
 }
 
 .logo-cont {
@@ -31,15 +49,20 @@ nav {
 	width: 150px;
 	float: left;
 	cursor: pointer;
+	z-index:1000;
 }
 
 svg#logo-m,
 svg#logo-martin {
 	fill:#bc4e27;
+	-webkit-transition: fill .3s; /* Safari */
+  transition: fill .3s;
 }
 
 svg#logo-williams{
 	fill:#a7a9ac;
+	-webkit-transition: fill .3s; /* Safari */
+  transition: fill .3s;
 }
 
 #logo-m {
@@ -73,6 +96,7 @@ svg#logo-williams{
 	float: right;
 	padding: 10px 11px;
 	cursor: pointer;
+	z-index:1000;
 	-webkit-transition: all .2s; /* Safari */
   transition: all .2s;
 }
@@ -122,16 +146,98 @@ svg#logo-williams{
 	background: #bc4e27;
 	height: 600px;
 	width: 100%;
-	position: absolute;
+	position: fixed;
 	top: 0;
-	left: 0;
+	left: 10000px;
 	z-index: 500;
+	display: block;
+	-webkit-transition: all .3s; /* Safari */
+  transition: all .3s;
+}
+
+.mn-cont {
+	float: none;
+	margin-top: 100px;
+}
+
+.mn-cont ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.mn-cont ul li {}
+.mn-cont ul li a,
+.mn-cont ul li a:visited {
+	color: #fff;
+	font-size: 3.0rem;
+	letter-spacing: -1.5px;
+	display:block;
+	width: 100%;
+	text-align: center;
+	padding-bottom: 10px;
+}
+
+.mn-cont ul li a:hover,
+.mn-cont ul li a:focus {
+	text-decoration: none;
+	opacity: .75;
+}
+
+html.open,
+.open body { 
+    overflow-x: hidden; 
+    overflow-y: hidden;
+}
+
+.open .main-nav {
+	left: 0 !important;
+}
+
+.open svg,
+.open svg#logo-williams,
+.open svg#logo-martin,
+.open svg#logo-m {
+	fill: #fff;
+}
+ul.mn-social,
+ul.mn-contact {
+	margin-top: 25px;
+}
+
+li.li-title {
+	color: #fff;
+	font-size: 3.0rem;
+	letter-spacing: -1.5px;
+	font-weight: 500;
+	line-height: 2.0rem;
+	padding: 0;
+	margin-bottom: 20px;
+}
+
+ul.mn-social li a,
+ul.mn-contact li a {
+	font-family: 'Domine', serif;
+	font-size: 1.7rem;
+	line-height: 2.0rem;
+	letter-spacing: 0;
+	color: #000;
+	padding: 0;
+}
+
+.nav-hide {
+	top: -75px;
 }
 
 
 @media only screen and (min-width:768px) {
 	nav {
-		margin:40px 0;
+		height: 125px;
+	}
+	.nav-show {
+		margin: 40px 0;
+		-webkit-transition: all .3s; /* Safari */
+  	transition: all .3s;
 	}
 	.logo-cont {
 		width: 250px;
@@ -150,8 +256,70 @@ svg#logo-williams{
 		left: 135px;
 		top: 9px;
 	}
+	.mn-cont {
+		float: right;
+		margin-top: 40px;
+		margin-right: 60px;
+	}
+	.main-nav {
+		width: auto;
+	}
+	.mn-cont ul {
+		width: 225px;
+	}
+	.mn-cont ul li a {
+		width: auto;
+		display: inline-block;
+		text-align: left;
+		-webkit-transition: all .3s; /* Safari */
+  	transition: all .3s;
+	}
+
+	.mn-cont ul li a:hover {
+		opacity: 1;
+		padding-left: 15px;
+	}
+
+	.mn-cont ul.mn-social li a:hover,
+	.mn-cont ul.mn-contact li a:hover{
+		padding: 0;
+		opacity: .7;
+	}
+
+	a.tele {
+		margin-top: 10px;
+	}
+
+	nav.min-nav {
+		height: 75px;
+	}
+
+	.min-nav .nav-show {
+		margin: 15px 0;
+	}
 
 }
 
+/* END main navigation *****************************************************************************/
+/* Footer  *****************************************************************************************/
+footer {
+	background: #000;
+	height: 500px;
+}
+/* END Footer  *****************************************************************************************/
+
+.page-container {
+	margin-top:75px;
+	height: 700px;
+	background-color: #ccc;
+}
+
+@media only screen and (min-width:768px) {
+	.page-container {
+		margin-top:125px;
+	}
+}
+@media only screen and (min-width: 992px) {}
+@media only screen and (min-width: 1200px) {}
 
 
