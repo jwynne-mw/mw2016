@@ -13,6 +13,11 @@ body {
 div {
 	position: relative;
 }
+
+a:focus { 
+    outline: none; 
+}
+
 .container {
 	min-width: 280px;
 }
@@ -52,25 +57,25 @@ nav {
 	z-index:1000;
 }
 
-svg#logo-m,
-svg#logo-martin {
+svg.logo-m,
+svg.logo-martin {
 	fill:#bc4e27;
 	-webkit-transition: fill .3s; /* Safari */
   transition: fill .3s;
 }
 
-svg#logo-williams{
+svg.logo-williams{
 	fill:#a7a9ac;
 	-webkit-transition: fill .3s; /* Safari */
   transition: fill .3s;
 }
 
-#logo-m {
+.logo-m {
 	width: 45px;
 }
 
-#logo-martin,
-#logo-williams {
+.logo-martin,
+.logo-williams {
 	height: 15px;
 }
 
@@ -195,9 +200,9 @@ html.open,
 }
 
 .open svg,
-.open svg#logo-williams,
-.open svg#logo-martin,
-.open svg#logo-m {
+.open svg.logo-williams,
+.open svg.logo-martin,
+.open svg.logo-m {
 	fill: #fff;
 }
 ul.mn-social,
@@ -242,8 +247,8 @@ ul.mn-contact li a {
 	.logo-cont {
 		width: 250px;
 	}
-	#logo-martin,
-	#logo-williams {
+	.logo-martin,
+	.logo-williams {
 		height: 20px;
 	}
 
@@ -304,8 +309,73 @@ ul.mn-contact li a {
 /* Footer  *****************************************************************************************/
 footer {
 	background: #000;
-	height: 500px;
+	padding: 100px 0;
 }
+
+footer .logo-cont {
+	margin-bottom: 25px;
+}
+
+footer svg.logo-m,
+footer svg.logo-martin,
+footer svg.logo-williams {
+	fill: #ffffff;
+}
+
+footer .ft-link-cont {
+	padding: 0 15px 0 40px;
+}
+
+footer .ft-link-cont > a,
+footer .ft-title {
+	display: block;
+	width: 100%;
+	font-weight: 500;
+	font-size: 2.4rem;
+	color: #fff;
+	line-height: 2.8rem;
+	padding-bottom: 15px;
+}
+
+footer .ft-title {
+	padding-bottom: 5px;
+}
+
+ul.ft-copy {
+	list-style: none;
+	padding:0;
+	margin:0 0 15px;
+}
+
+ul.ft-copy li {}
+
+footer #ft-links ul.ft-copy li a {
+	color: #808080;
+	font-size: 1.4rem;
+	line-height: 1.8rem;
+	display:block;
+	font-family: 'Domine', serif;
+	font-weight: normal;
+	margin-bottom: 5px;
+}
+
+@media only screen and (min-width:768px) {
+	footer .logo-cont {
+		margin-bottom: 50px;
+	}
+	footer .ft-link-cont {
+		padding: 0 15px;
+		min-height: 150px;
+	}
+}
+@media only screen and (min-width: 992px) {
+	footer .logo-cont {
+		margin-bottom: 75px;
+	}
+}
+@media only screen and (min-width: 1200px) {}
+
+
 /* END Footer  *****************************************************************************************/
 
 .page-container {

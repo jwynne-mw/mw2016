@@ -36,10 +36,8 @@ $(function() {
 				$nav.addClass('min-nav');
 			} else if (winWidth > 768 && screenTop < 125){
 				$nav.removeClass('min-nav');
-				console.log (screenTop);
 			}
 
-			
 			currScrollTop = screenTop;
 			
 		});
