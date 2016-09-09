@@ -16,6 +16,7 @@ div {
 
 a:focus { 
     outline: none; 
+    text-decoration: none;
 }
 
 .container {
@@ -52,7 +53,7 @@ h2 {
 
 @media only screen and (min-width:768px) {
 	.page-container {
-		margin-top:125px;
+		/*margin-top:125px;*/
 	}
 }
 @media only screen and (min-width: 992px) {}
@@ -120,15 +121,15 @@ svg.logo-martin {
 .logo2 {
 	height: 15px;
 	position: absolute;
-	left: 42px;
-	top:5px;
+	left: 39px;
+	top:11px;
 }
 
 .logo3 {
 	height: 15px;
 	position: absolute;
-	left: 42px;
-	top: 22px;
+	left: 100px;
+	top: 11px;
 }
 
 .menu-icon {
@@ -221,13 +222,15 @@ svg.logo-martin {
 .mn-cont ul li {}
 .mn-cont ul li a,
 .mn-cont ul li a:visited {
+	font-family: 'Domine', serif;
+	font-weight: lighter;	
 	color: #fff;
-	font-size: 3.0rem;
-	letter-spacing: -1.5px;
+	font-size: 3rem;
 	display:block;
 	width: 100%;
-	text-align: center;
-	padding-bottom: 10px;
+	text-align: right;
+	padding: 0 20px 10px 0;
+	font-style: normal;
 }
 
 .mn-cont ul li a:hover,
@@ -258,9 +261,9 @@ ul.mn-contact {
 }
 
 li.li-title {
+	font-family: 'Domine', serif;
 	color: #fff;
 	font-size: 3.0rem;
-	letter-spacing: -1.5px;
 	font-weight: 500;
 	line-height: 2.0rem;
 	padding: 0;
@@ -274,7 +277,7 @@ li.li-title {
 	line-height: 2.0rem;
 	letter-spacing: 0;
 	color: #000;
-	padding: 0;
+	padding: 0 20px 0 0 ;
 }
 
 .nav-hide {
@@ -310,25 +313,27 @@ li.li-title {
 	}
 	.mn-cont {
 		float: right;
-		margin-top: 40px;
-		margin-right: 60px;
+		margin-top: 100px;
+		margin-right: 0;
 	}
 	.main-nav {
 		width: auto;
 	}
 	.mn-cont ul {
-		width: 225px;
+		width: 300px;
 	}
 	.mn-cont ul li a {
+		font-size: 3.0rem;
 		width: auto;
-		display: inline-block;
-		text-align: left;
+		display: block;
+		text-align: right;
+		opacity: 1;
 		-webkit-transition: all .3s; /* Safari */
   	transition: all .3s;
 	}
 
 	.mn-cont ul li a:hover {
-		opacity: 1;
+		opacity: .7;
 		padding-left: 15px;
 	}
 
@@ -343,12 +348,10 @@ li.li-title {
 	}
 
 	nav.min-nav {
-		height: 75px;
+		margin-top: -125px;
 	}
 
-	.min-nav .nav-show {
-		margin: 15px 0;
-	}
+	
 
 }
 
@@ -384,6 +387,11 @@ footer .ft-title {
 	padding-bottom: 15px;
 }
 
+footer .ft-link-cont > a:hover {
+	opacity: .7;
+	text-decoration: none;
+}
+
 footer .ft-title {
 	padding-bottom: 5px;
 }
@@ -404,6 +412,11 @@ footer #ft-links ul.ft-copy li a {
 	font-family: 'Domine', serif;
 	font-weight: normal;
 	margin-bottom: 5px;
+}
+
+footer #ft-links ul.ft-copy li a:hover {
+	opacity: .7;
+	text-decoration: none;
 }
 
 @media only screen and (min-width:768px) {
@@ -430,10 +443,10 @@ footer #ft-links ul.ft-copy li a {
 }
 
 .sq-single {
+	opacity:0;
 	cursor: pointer;
 	max-width: 300px;
 	margin: 0 auto 50px;
-	opacity:0;
 }
 
 .sq-single img {
@@ -444,6 +457,7 @@ footer #ft-links ul.ft-copy li a {
 }
 
 .sq-single h2 {
+	font-family: 'DINPro', sans-serif;
 	font-size: 2.5rem;
 	line-height: 3.0rem;
 	color: #000;
@@ -472,17 +486,26 @@ footer #ft-links ul.ft-copy li a {
 }
 
 a.btn-sqly {
+	display: block;
+	opacity:0;
 	font-family: 'Domine', serif;
-	font-size: 3.5rem;
-	line-height: 4.0rem;
+	font-size: 2.0rem;
+	line-height: .0rem;
 	color:#bc4e27;
 	padding: 15px;
-	font-weight: bold;
+	font-weight: normal;
+	-webkit-transition: all .25s; /* Safari */
+  transition: all .25s;
+}
+
+a.btn-sqly:hover {
+	opacity: .7;
+	text-decoration: none;
 }
 
 .come-in {
-  transform: translateY(200px);
-  animation: come-in 0.9s ease forwards;
+  transform: translateY(50px);
+  animation: come-in 1.5s ease forwards;
 }
 
 .already-visible {
@@ -491,8 +514,18 @@ a.btn-sqly {
   animation: none;
 }
 
+#culture {
+	margin-bottom:100px;
+}
+
 @keyframes come-in {
   to { transform: translateY(0); opacity:1;}
+}
+
+@media only screen and (min-width:768px) {
+	a.btn-sqly {
+		font-size: 3.0rem;
+	}
 }
 
 /* END Squares Layout **********************************************************************************/
@@ -506,7 +539,7 @@ a.btn-sqly {
 
 .hero-copy-cont{
 	position: absolute;
-	width: 66.66%;
+	width: 100%;
 	top: 0;
 	left: 0;
 	z-index: 200;
@@ -520,7 +553,6 @@ a.btn-sqly {
   bottom: 0;
   left: 0;
   height: 67px;
-  /*background-color: rgba(245,245,245,.8);*/
 }
 
 .hc-copy .perm{
@@ -532,10 +564,9 @@ a.btn-sqly {
 
 .temp-holder {
 	float: left;
-	padding: 0 0 0 10px;
+	padding: 0 0 0 12px;
 	-webkit-transition: margin .5s; /* Safari */
   transition: margin .5s;
-	/*margin-top:-63px;*/
 }
 
 .temp-holder span.temp{
@@ -556,7 +587,7 @@ a.btn-sqly {
 
 .hero-image-cont {
 	position: absolute;
-	width: 70%;
+	width: 76.5%;
 	top: 0;
 	right: 0;
 	z-index: 100;
@@ -569,7 +600,7 @@ a.btn-sqly {
 	opacity: 0;
 	top: 0;
 	left: 0;
-	background-position: center center;
+	background-position: right center;
 		background-repeat: no-repeat;
 		-webkit-background-size: cover;
 	  -moz-background-size: cover;
@@ -588,5 +619,100 @@ a.btn-sqly {
 
 #meat-raffle {
 	background-color: #fff;
-	height:;
+	padding: 50px 0;
 }
+
+#meat-raffle h2 {
+	margin-top:0;
+}
+
+#meat-raffle p {
+	width: 100%;
+	font-size: 1.8rem;
+	color: #808080;
+}
+
+#meat-raffle form {
+	margin-top: 15px;
+}
+
+.input-cont {
+	margin-bottom: 22px;
+}
+
+.mobile-pad {
+	padding: 0 30px;
+}
+
+.input-cont input {
+	width: 100%;
+	background-color: #f5f5f5;
+	border-style:solid;
+	border: none;
+	-webkit-appearance: none;
+	padding: 5px 15px;
+	font-size: 1.8rem;
+	height:50px;
+	color: #808080;
+}
+
+.input-cont label {
+	font-size: 1.8rem;
+	color: #808080;
+	position: absolute;
+	top: 13px;
+	left: 15px;
+	z-index: 100;
+	cursor: text;
+	-webkit-transition: all .25s; /* Safari */
+  transition: all .25s;
+}
+
+.input-cont input:focus + label,
+.input-cont label.filled-out {
+
+	opacity:0;
+ 	/*top: 13px;
+	left: 0;
+	font-size: 14px;
+	color: #000;
+	cursor: default;*/
+}
+
+#meat-raffle form a { 
+	display: block;
+	font-size: 2.0rem;
+	line-height: 5.0rem;
+	color: #bc4e27;
+	font-family: 'Domine', serif;
+	font-weight: normal;	
+	opacity:1;
+	-webkit-transition: all .25s; /* Safari */
+  transition: all .25s;
+}
+
+#meat-raffle form a:hover {
+	text-decoration: none;
+	opacity:.7;
+}
+
+
+@media only screen and (min-width:768px) {
+	#meat-raffle {
+		padding: 80px 0;
+	}
+	#meat-raffle form {
+		margin-top: 0;
+	}
+
+}
+@media only screen and (min-width: 992px) {
+	#meat-raffle p {
+		width: 80%;
+	}
+}
+@media only screen and (min-width: 1200px) {}
+
+
+
+
