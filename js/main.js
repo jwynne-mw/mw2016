@@ -7,8 +7,8 @@ $(function() {
 			$nav = $('nav'),
 			currScrollTop=0,
 			tempCount,
-			tempCurr=1,
-			tempPrev,
+			tempCurr=0,
+			tempPrev=0,
 			tempTop=75,
 			isSlower;
 
@@ -21,7 +21,7 @@ $(function() {
 	// start the HH Show
 	setTimeout(function(){ 
 		$('.hc-copy .perm').addClass('in');
-		//setTimeout(slideTemps, 2500);
+		setTimeout(slideTemps, 2500);
 	}, 500);
 
 
@@ -57,22 +57,30 @@ $(function() {
 
 
 	function slideTemps(){
+		console.log(tempCurr);
+		$('.temp').removeClass('out');
 		if(tempCurr<tempCount){
+			$('.temp[data-count="'+tempCurr+'"]').removeClass('in');
+			tempPrev = tempCurr;
+			tempCurr = tempCurr+1;
+			$('.temp[data-count="'+tempPrev+'"]').addClass('out');
+			$('.temp[data-count="'+tempCurr+'"]').addClass('in');
+			$('.hi-single').removeClass('in');
+			$('.hc-links, .hc-links a').removeClass('in');
+			$('.hi-single[data-img="'+tempCurr+'"]').addClass('in');
+			$('.hc-links a[data-link="'+tempCurr+'"]').parent('.hc-links').addClass('in');
+			$('.hc-links a[data-link="'+tempCurr+'"]').addClass('in');
 
-			var slideUpTemp = tempCurr*tempTop;
-			$('.temp[data-count="'+tempCurr+'"]').removeClass('show');
-			tempCurr=tempCurr+1;
-			$('.temp[data-count="'+tempCurr+'"]').addClass('show');
-			$('.temp-holder').css('margin-top','-'+slideUpTemp+'px');
-			$('.hi-single').removeClass('show');
-			$('.hi-single[data-tempword="'+tempCurr+'"]').addClass('show');
 
-			if($('.hi-single[data-tempword="'+tempCurr+'"]').hasClass('show')){
+			if($('.hi-single[data-img="'+tempCurr+'"]').hasClass('in')){
 				runShow(5000);
 			}else{
 				runShow(2500);
 			}
 			
+		}else{
+			$('.temp[data-count="'+tempCurr+'"]').removeClass('in').addClass('out');
+			resetShow();
 		}
 		
 	};
@@ -81,8 +89,11 @@ $(function() {
 			setTimeout(slideTemps, t);
 	}
 
-   
-
+	function resetShow(){
+		tempCurr=0;
+		tempPrev=0;
+		setTimeout(slideTemps, 1500);
+	}
 
 	function setSlideMenu(){
 		var $mn= $('.main-nav');
@@ -99,10 +110,6 @@ $(function() {
 		$('.hh-cont, .hero-copy-cont, .hi-single').css('height',heroHeight+'px');
 	}
 
-	function scrollWords(){
-		var scrollTop = 
-		$('.temp-holder').css('margin-top')
-	}
 
 	// scroll detector and get scrolling position
 		$win.scroll(function(event) {

@@ -576,32 +576,30 @@ a.btn-sqly:hover {
 .hc-copy .temp{
 	display: block;
 	position: absolute;
-	top: 51px;
+	top: 55px;
 	left: 0;
 	opacity: 0;
 	color: #c04e27;
 	font-family: 'Domine', serif;
 	font-size: 3.4rem;
-	line-height: 5rem;
+	line-height: 4rem;
 	-webkit-transition: all .5s; /* Safari */
   transition: all .5s;
 }
 
-.hc-copy .temp.show {
+.hc-copy .temp.in {
 	opacity: 1;
-	top:36px;
+	top:40px;
 }
-
-.hc-copy .temp.show.out {
+.hc-copy .temp.out {
 	opacity: 0;
-	top:-50px;
+	top:25px;
 }
-
 
 .hero-image-cont {
 	position: absolute;
 	width: 100%;
-	top: 95px;
+	top: 123px;
 	right: 0;
 	z-index: 100;
 }
@@ -610,7 +608,7 @@ a.btn-sqly:hover {
 .hi-single {
 	width: 100%;
 	position: absolute;
-	opacity: 1;
+	opacity: 0;
 	top: 0;
 	left: 0;
 	background-position: right center;
@@ -623,22 +621,28 @@ a.btn-sqly:hover {
   transition: opacity 1s;
 }
 
-.hi-single.show {
+.hi-single.in {
 	opacity: 1;
 }
 
 .hc-links {
 	position: absolute;
+	opacity:0;
+	height: 40px;
 	bottom: -30px;
-	z-index: 100;
+	z-index: 300;
 	background-color: #f5f5f5;
 	width: 100%;
-	-webkit-transition: bottom .5s; /* Safari */
-  transition: bottom .5s;
+	-webkit-transition: opacity 1s; /* Safari */
+  transition: opacity 1s;
 }
 
 .hc-links a {
-	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: none;
+	opacity:0;
 	width: 100%;
 	padding: 5px 0;
 	font-family: 'Domine', serif;
@@ -647,6 +651,16 @@ a.btn-sqly:hover {
 	line-height: 4rem;
 	text-decoration: none;
 	padding: 0 0 0 4px;
+	z-index: 0;
+	-webkit-transition: opacity 1s; /* Safari */
+  transition: opacity 1s;
+}
+
+.hc-links.in,
+.hc-links a.in {
+	opacity: 1;
+	display: block;
+	z-index: 500;
 }
 
 .hc-links a:hover {
