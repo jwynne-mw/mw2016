@@ -57,7 +57,6 @@ $(function() {
 
 
 	function slideTemps(){
-		console.log(tempCurr);
 		$('.temp').removeClass('out');
 		if(tempCurr<tempCount){
 			$('.temp[data-count="'+tempCurr+'"]').removeClass('in');
@@ -74,8 +73,11 @@ $(function() {
 
 			if($('.hi-single[data-img="'+tempCurr+'"]').hasClass('in')){
 				runShow(5000);
+				barMove(5000);
 			}else{
 				runShow(2500);
+				$("#bar").css('width', '0%');
+				// barMove(2500);
 			}
 			
 		}else{
@@ -94,6 +96,25 @@ $(function() {
 		tempPrev=0;
 		setTimeout(slideTemps, 1500);
 	}
+
+	function barMove(time) {
+		var $bar = $("#bar"); 
+		var barTime = time;
+		var width = 1;
+		var barPer = 0;
+		var intTime = barTime/100;
+		$bar.css('width',barPer+'%');
+		var id = setInterval(frame, intTime);
+	    function frame() {
+	        if (width >= 100) {
+	            clearInterval(id);
+	        } else {
+	            width++; 
+	            barPer = barTime/width;
+	            $bar.css('width',width+'%'); 
+	        }
+	    }
+		}
 
 	function setSlideMenu(){
 		var $mn= $('.main-nav');
