@@ -32,6 +32,7 @@ a:focus {
 
 .page-container {
 	margin-top:75px;
+	z-index: 1;
 }
 
 h1 {
@@ -71,8 +72,12 @@ nav {
 	width: 100%;
 	z-index: 5000;
 	margin:0;
-	-webkit-transition: all .5s; /* Safari */
-  transition: all .5s;
+	-webkit-transition: top .3s; /* Safari */
+  transition: top .3s;
+}
+
+.open nav {
+	background: rgba(245,245,245,0);
 }
 
 .nav-show {
@@ -197,8 +202,28 @@ svg.logo-martin {
    transform: rotate(-45deg);
 }
 
+.nav-back {
+	display: block;
+	position:fixed;
+	background-color: #bc4e27;
+	top:0;
+	left:0;
+	width: 100%;
+	height: 0;
+	opacity: 0;
+	z-index: -1;
+	-webkit-transition: opacity .3s; /* Safari */
+  transition: opacity .3s;
+}
+
+.open .nav-back {
+	opacity: 1;
+	z-index: 100;
+}
+
+
 .main-nav {
-	background: #bc4e27;
+	/*background: #bc4e27;*/
 	height: 600px;
 	width: 100%;
 	position: fixed;
@@ -247,6 +272,9 @@ html.open,
     overflow-y: hidden;
 }
 
+.open #progress-bar {
+	opacity: 0;
+}
 .open .main-nav {
 	left: 0 !important;
 }
@@ -281,6 +309,18 @@ li.li-title {
 	color: #000;
 	padding: 0 20px 0 0 ;
 }
+
+.mn-cont ul.mn-contact li a:hover {
+	opacity: .5;
+}
+
+	a.tele {
+		margin-top: 20px;
+	}
+
+footer a.tele {
+		margin-top: 10px;
+	}
 
 .nav-hide {
 	top: -75px;
@@ -336,17 +376,11 @@ li.li-title {
 
 	.mn-cont ul li a:hover {
 		opacity: .7;
-		padding-left: 15px;
 	}
 
 	.mn-cont ul.mn-social li a:hover,
 	.mn-cont ul.mn-contact li a:hover{
-		padding: 0;
-		opacity: .7;
-	}
-
-	a.tele {
-		margin-top: 10px;
+		opacity: .5;
 	}
 
 	nav.min-nav {
@@ -429,10 +463,17 @@ footer #ft-links ul.ft-copy li a:hover {
 		padding: 0 15px;
 		min-height: 150px;
 	}
+
+	footer .ft-link-cont.ft-one {
+		min-height: 70px;
+	}
 }
 @media only screen and (min-width: 992px) {
 	footer .logo-cont {
 		margin-bottom: 75px;
+	}
+	footer .ft-link-cont.ft-one {
+		min-height: 150px;
 	}
 }
 @media only screen and (min-width: 1200px) {}
@@ -493,7 +534,8 @@ a.btn-sqly {
 	font-family: 'Domine', serif;
 	font-size: 2.0rem;
 	line-height: .0rem;
-	color:#bc4e27;
+	color:#c04e27;
+
 	padding: 15px;
 	font-weight: normal;
 	-webkit-transition: all .25s; /* Safari */
@@ -526,7 +568,7 @@ a.btn-sqly:hover {
 
 @media only screen and (min-width:768px) {
 	a.btn-sqly {
-		font-size: 3.0rem;
+		font-size: 2.5rem;
 	}
 }
 
@@ -539,6 +581,7 @@ a.btn-sqly:hover {
 
 .hh-cont {
 	overflow:hidden;
+	height: 700px;
 }
 
 .hero-copy-cont{
@@ -560,18 +603,19 @@ a.btn-sqly:hover {
 
 .hc-copy .perm {
 	position: absolute;
-	top:0;
+	top:20px;
 	left: 0;
 	opacity: 0;
 	font-size: 3.8rem;
 	line-height: 5rem;
 	letter-spacing: -2px;
-	-webkit-transition: opacity .7s; /* Safari */
-  transition: opacity .7s;
+	-webkit-transition: all .7s; /* Safari */
+  transition: all .7s;
 }
 
 .hc-copy .perm.in{
 	opacity: 1;
+	top:0;
 }
 
 
@@ -682,6 +726,7 @@ a.btn-sqly:hover {
 	.hc-copy .perm {
 		font-size: 4.5rem;
 		line-height: 5rem;
+		color: #000;
 	}
 
 	.hc-copy .temp{
@@ -760,11 +805,14 @@ a.btn-sqly:hover {
 	position: absolute;
 	top: 0;
 	left: 0;
+	opacity: 1;
 	width: 100%;
 	height: 2px;
 	z-index: 6000;
 	overflow: hidden;
 	background-color: #f5f5f5;
+	-webkit-transition: opacity .5s; /* Safari */
+  transition: opacity .5s;
 }
 
 #progress-bar #bar {

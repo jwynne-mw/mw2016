@@ -29,6 +29,11 @@ $(function() {
 	$('.menu-icon').click(function(){
 		$('.main-nav').removeClass('notransition');
 		$('html').toggleClass('open');
+		if ($('html').hasClass('open')){
+			$('.nav-back').css('height', winHeight+'px');
+		}else{
+			$('.nav-back').attr('style','');
+		}
 	});
 
 	// Already visible modules
