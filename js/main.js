@@ -8,14 +8,22 @@ $(function() {
 			currScrollTop=0,
 			tempCount,
 			tempCurr=1,
-			tempTop=63,
+			tempPrev,
+			tempTop=75,
 			isSlower;
 
-   $(this).scrollTop(0);
+  $(this).scrollTop(0);
 	setSlideMenu();
 	setHomeHero();
-	setTimeout(slideTemps, 2500);
+	
 	$('.input-cont input').val('');
+
+	// start the HH Show
+	setTimeout(function(){ 
+		$('.hc-copy .perm').addClass('in');
+		//setTimeout(slideTemps, 2500);
+	}, 500);
+
 
 
 	$('.menu-icon').click(function(){
@@ -31,7 +39,7 @@ $(function() {
 	  } 
 	});
 
-	$('.hc-copy span.temp').each(function(i){
+	$('.hc-copy .temp').each(function(i){
 		tempCount = i+1;
 		$(this).attr('data-count', tempCount);
 	});
@@ -50,6 +58,7 @@ $(function() {
 
 	function slideTemps(){
 		if(tempCurr<tempCount){
+
 			var slideUpTemp = tempCurr*tempTop;
 			$('.temp[data-count="'+tempCurr+'"]').removeClass('show');
 			tempCurr=tempCurr+1;
@@ -82,12 +91,12 @@ $(function() {
 
 	function setHomeHero(){
 		var heroHeight = winHeight - 150;
-		if(heroHeight>700){
+		if(heroHeight>700 ){
 			heroHeight=700;
 		}else if(heroHeight<400){
 			heroHeight=400;
 		}
-		$('.hh-cont,.hh-cont > *, .hi-single').css('height',heroHeight+'px');
+		$('.hh-cont, .hero-copy-cont, .hi-single').css('height',heroHeight+'px');
 	}
 
 	function scrollWords(){
