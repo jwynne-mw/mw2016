@@ -13,8 +13,6 @@ $(function() {
 			tempTop=75,
 			isSlower;
 
-	console.log(docHeight);
-
   $(this).scrollTop(0);
 	setSlideMenu();
 	setHomeHero();
@@ -28,19 +26,19 @@ $(function() {
 
 	$('.menu-icon').click(function(){
 		$('.main-nav').removeClass('notransition');
-		$('nav').addClass('bk-out');
+
 		$('html').toggleClass('open');
 		if ($('html').hasClass('open')){
 			$('.nav-back').css('height', winHeight+'px');
 		}else{
-			backOffNav();
+			//backOffNav();
 		}
 	});
 
 	$('#scroll-arrow').click(function(){
 
 		if($(this).hasClass('down')){
-			var  firstEl = ($("h1").offset().top)-50;
+			var firstEl = ($(".sweet-spot").offset().top)-50;
 			$('html, body').animate({
 			    scrollTop: firstEl
 			}, 500);
@@ -54,7 +52,7 @@ $(function() {
 	function backOffNav(){
 		setTimeout(function(){ 
 			$('.nav-back').attr('style','');
-			$('nav').removeClass('bk-out');
+			$('nav').removeClass('no-color');
 		},500);
 	}
 
@@ -101,9 +99,11 @@ $(function() {
 			if($('.hi-single[data-img="'+tempCurr+'"]').hasClass('in')){
 				runShow(3500);
 				barMove(3500);
+				$('#progress-bar').addClass('on');
 			}else{
 				runShow(1250);
 				$("#bar").css('width', '0%');
+				$('#progress-bar').removeClass('on');
 				// barMove(2500);
 			}
 
@@ -139,7 +139,7 @@ $(function() {
 		var id = setInterval(frame, intTime);
 	    function frame() {
 	        if (width >= 100) {
-	            clearInterval(id);
+	          clearInterval(id);
 	        } else {
 	            width++; 
 	            barPer = barTime/width;
@@ -171,8 +171,10 @@ $(function() {
 
 	// scroll detector and get scrolling position
 		$win.scroll(function(event) {
-			screenTop = $doc.scrollTop();
+			var screenTop = $doc.scrollTop();
+			var screenBottom = winHeight+screenTop;
 			var topPercent = parseInt((screenTop/docHeight)*100);
+			var btmPercent = parseInt((screenBottom/docHeight)*100);
 			//for main nav 
 			if(winWidth<=768 && screenTop >= 75 && currScrollTop < screenTop){
 				$nav.addClass('nav-hide');
@@ -182,6 +184,13 @@ $(function() {
 				$nav.addClass('min-nav');
 			} else if ((winWidth > 768 && screenTop < 125) || (winWidth > 768 && currScrollTop > screenTop)){
 				$nav.removeClass('min-nav');
+			}
+
+			//fade out nav background at top of screen 
+			if(screenTop < 250){
+				$('nav').addClass('no-color');
+			}else{
+				$('nav').removeClass('no-color');
 			}
 
 			// for sq-up class
@@ -196,7 +205,7 @@ $(function() {
 		    }
 		  });
 
-		  if(topPercent>70){
+		  if(btmPercent>80){
 		  	$('#scroll-arrow').removeClass('down').addClass('on');
 		  }else if (topPercent<10) {
 		  	$('#scroll-arrow').addClass('down').addClass('on');
@@ -204,7 +213,7 @@ $(function() {
 		  	$('#scroll-arrow').removeClass('on');
 		  }
 
-
+		 
 			currScrollTop = screenTop;
 			
 		});

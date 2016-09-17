@@ -31,8 +31,12 @@ a:focus {
 }
 
 .page-container {
-	margin-top:75px;
-	z-index: 1;
+		z-index: 1;
+}
+
+.page-container section:first-child {
+	padding-top:75px;
+
 }
 
 h1 {
@@ -42,6 +46,7 @@ h1 {
 	font-weight: 500;
 	font-style: normal;
 	letter-spacing: 3px;
+	text-transform: uppercase;
 }
 
 h2 {
@@ -53,8 +58,8 @@ h2 {
 }
 
 @media only screen and (min-width:768px) {
-	.page-container {
-		margin-top:125px;
+	.page-container section:first-child {
+		padding-top:125px;
 	}
 }
 @media only screen and (min-width: 992px) {}
@@ -64,18 +69,19 @@ h2 {
 /* main navigation *****************************************************************************/
 nav {
 	position: fixed;
-	background-color: rgba(245,245,245,1);
+	background-color: rgba(245,245,245,.95);
 	top:0;
 	left:0;
 	width: 100%;
 	z-index: 5000;
 	margin:0;
-	-webkit-transition: top .3s; /* Safari */
-  transition: top .3s;
+	-webkit-transition: all .3s; /* Safari */
+  transition: all .3s;
 }
 
-nav.bk-out {
-	background-color: rgba(245,245,245,0);
+nav.no-color,
+.open nav {
+	background-color: rgba(245,245,245,0)!important;
 }
 
 .nav-show {
@@ -394,11 +400,18 @@ footer a.tele {
 footer {
 	background: #000;
 	padding: 100px 0;
+
 }
 
 footer .logo-cont {
 	margin-bottom: 25px;
+	z-index: 200;
 }
+
+.open footer .logo-cont svg{
+	display:none;
+}
+
 
 footer svg.logo-martin,
 footer svg.logo-williams {
@@ -816,6 +829,7 @@ a.btn-sqly:hover {
 	top: 0;
 	left: 0;
 	opacity: 1;
+	display:none;
 	width: 100%;
 	height: 2px;
 	z-index: 6000;
@@ -823,6 +837,10 @@ a.btn-sqly:hover {
 	background-color: #f5f5f5;
 	-webkit-transition: opacity .5s; /* Safari */
   transition: opacity .5s;
+}
+
+#progress-bar.on {
+	display:block;
 }
 
 #progress-bar #bar {
@@ -833,7 +851,7 @@ a.btn-sqly:hover {
 }
 
 /* END Progress Bar ***************************************************************************************/
-/* END Home Hero ***************************************************************************************/
+/* Meat Raffle ***************************************************************************************/
 
 #meat-raffle {
 	background-color: #fff;
@@ -964,11 +982,147 @@ a.btn-sqly:hover {
 
 	#scroll-arrow.down img {
 		-webkit-transform: rotate(180deg); /* Safari */
-	    transform: rotate(180deg);
+	  transform: rotate(180deg);
 	}
 
 	.open #scroll-arrow {
 		display: none;
 	}
 }
+
+
+/* END Meat raffle  ***************************************************************************************/
+/* Case Study ***************************************************************************************/
+
+#cs-top {
+	background: linear-gradient( #3ab289 70%, #f5f5f5 30%);
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+	padding-bottom: 200px;
+	min-height: 750px;
+}
+
+
+.bi-img-holder {
+	position: absolute;
+  width: 100vw;
+  height: 70vw;
+  overflow: hidden;
+  bottom: 8%;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+}
+
+.bi-img-holder .img-top {
+	position: absolute;
+	top:0;
+	left:0;
+	background-image: url(../img/case-study/cs-hero900x630.png);
+  background-color: #3ab289;
+  background-blend-mode: multiply;
+  background-size: 100vw; 
+  width: 100vw;
+  height: 35vw;
+  z-index:2;
+}
+
+.bi-img-holder .img-bottom {
+	position: absolute;
+	top:0;
+	left:0;
+	background-image: url(../img/case-study/cs-hero900x630.png);
+  background-color: #f5f5f5;
+  background-blend-mode: multiply;
+  background-size: 100vw; 
+  width: 100vw;
+  height: 70vw;
+  z-index:1;
+}
+
+.arrow-cont {
+	position: relative;
+	width: 100%;
+	height: 30px;
+	top: 190px;
+	z-index: 500;
+	padding: 0 15px;
+}
+
+.arrow-cont .right{
+	width: 30px;
+	position: absolute;
+	right: 0;
+	top: 0;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+.arrow-cont .right img{
+	width: 30px;
+	height: 30px;
+	-webkit-transform: rotate(90deg); /* Safari */
+	transform: rotate(90deg)
+}
+
+.arrow-cont .left{
+	width: 30px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+.arrow-cont .left img{
+	width: 30px;
+	height: 30px;
+	-webkit-transform: rotate(-90deg); /* Safari */
+	transform: rotate(-90deg)
+}
+
+.cs-copy {
+	text-align: center;
+	margin-top: 60px;
+	z-index: 10;
+}
+
+.cs-copy h2 {
+	font-size: 4rem;
+	line-height: 4.5rem;
+  font-family: 'DINPro', sans-serif;
+  color: #fff;
+  margin: 0 0 20px;
+}
+
+@media only screen and (min-width:768px) {
+	.cs-copy h2 {
+		font-size: 6rem;
+		line-height: 6.5rem;
+	  font-family: 'DINPro', sans-serif;
+	  color: #fff;
+	  margin: 100px 0 20px;
+	}
+}
+@media only screen and (min-width:900px) {
+	.bi-img-holder {
+	  width: 900px;
+	  height: 630px;
+	  top: calc(70% - 315px);
+	}
+
+	.bi-img-holder .img-top {
+		background-size: 900px 630px; 
+	  width: 900px;
+	  height: 315px;
+	}
+
+	.bi-img-holder .img-bottom {
+		background-size: 900px 630px; 
+	  width: 900px;
+	  height: 630px;
+	}
+}
+@media only screen and (min-width: 1200px) {}
 
