@@ -40,8 +40,8 @@ a:focus {
 }
 
 h1 {
-	font-size: 2.5rem;
-	line-height: 3rem;
+	font-size: 2rem;
+	line-height: 2.5rem;
 	color: #ccc;
 	font-weight: 500;
 	font-style: normal;
@@ -57,9 +57,19 @@ h2 {
 	font-weight: normal;	
 }
 
+p {
+	color: #808080;
+	font-size: 1.8rem;
+	line-height: 3rem;
+}
+
 @media only screen and (min-width:768px) {
 	.page-container section:first-child {
 		padding-top:125px;
+	}
+	h1 {
+		font-size: 2.5rem;
+		line-height: 3rem;
 	}
 }
 @media only screen and (min-width: 992px) {}
@@ -1048,6 +1058,7 @@ a.btn-sqly:hover {
 	top: 190px;
 	z-index: 500;
 	padding: 0 15px;
+	display: none;
 }
 
 .arrow-cont .right{
@@ -1096,7 +1107,50 @@ a.btn-sqly:hover {
   margin: 0 0 20px;
 }
 
+.copy-holder {
+	margin:0 0 50px;
+	text-align: center;
+}
+
+.copy-holder p {
+	width: 100%;
+}
+
+#vid-image-holder {
+	margin-bottom: 50px;
+}
+
+.quote-holder{
+	margin: 0 0 50px;
+	text-align: center;
+}
+
+.quote-holder .quote{
+	font-size: 4rem;
+	line-height: 4.5rem;
+	font-family: 'Domine', serif;
+	font-weight: normal;
+	color: #3ab289;	
+}
+
+.quote-holder .qfrom{
+	font-size: 2.5rem;
+	line-height: 3rem;
+	padding: 15px 0;
+	font-family: 'Domine', serif;
+	font-weight: normal;
+	color: #3ab289;	
+}
+
+
 @media only screen and (min-width:768px) {
+	#cs-top {
+		min-height: 1000px;
+	}
+	.cs-copy {
+		width:80%;
+		margin: 0 auto;
+	}
 	.cs-copy h2 {
 		font-size: 6rem;
 		line-height: 6.5rem;
@@ -1104,8 +1158,21 @@ a.btn-sqly:hover {
 	  color: #fff;
 	  margin: 100px 0 20px;
 	}
+	.arrow-cont {
+		display: block;
+	}
+	.copy-holder {
+		margin:100px 0;
+	}
+	#vid-image-holder {
+		margin-bottom: 100px;
+	}
+	.quote-holder{
+		margin: 0 0 100px;
+	}
 }
 @media only screen and (min-width:900px) {
+
 	.bi-img-holder {
 	  width: 900px;
 	  height: 630px;
@@ -1123,6 +1190,145 @@ a.btn-sqly:hover {
 	  width: 900px;
 	  height: 630px;
 	}
+	.copy-holder p {
+		width: 90%;
+		margin: 0 auto;
+	}
+	.quote-holder .quote{
+		font-size: 5rem;
+		line-height: 5.5rem;
+	}
+
+	.quote-holder .qfrom{
+		font-size: 3.5rem;
+		line-height: 4rem;
+		padding: 25px 0;
+	}
+	.quote-holder{
+		width: 90%;
+		margin:100px auto;
+	}
+
+}
+@media only screen and (min-width: 1200px) {
+	.copy-holder p {
+		width: 75%;
+	}
+	.quote-holder .quote{
+		font-size: 6rem;
+		line-height: 6.5rem;
+	}
+
+}
+
+/* END Case Study  ***************************************************************************************/
+/*  Dragable image component ***************************************************************************************/
+
+#drag-images{
+	margin-bottom: 100px;
+	height: 300px;
+	overflow: hidden;
+	position: relative;
+}
+
+#drag-icon {
+	background-image: url(../img/dragable.svg);
+	background-size: 40px;
+	background-repeat: no-repeat;
+	background-position: center 35%;
+	position: absolute;
+	height: 100px;
+	width: 100px;
+	background-color: #808080;
+	display: block;
+	border-radius: 50px;
+	z-index: 500;
+	top: 50%;
+  left: 50%;
+  opacity: 1;
+  transform: translate(-50%, -50%);
+}
+
+.drg-copy {
+	color: #fff;
+	margin-top: 55px;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 1.3rem;
+	letter-spacing: 1px;
+}
+
+
+.di-cont {
+	height:317px;
+	overflow: auto;
+	overflow: hidden;
+}
+
+.grabbable {
+    cursor: move !important; /* fallback if grab cursor is unsupported */
+    cursor: grab !important;
+    cursor: -moz-grab !important;
+    cursor: -webkit-grab !important;
+}
+
+ /* (Optional) Apply a "closed-hand" cursor during drag operation. */
+.grabbable:active { 
+    cursor: grabbing !important;
+    cursor: -moz-grabbing !important;
+    cursor: -webkit-grabbing !important;
+}
+
+
+.di-single-holder {
+	height: 300px;
+}
+
+
+.di-single {
+	height: 300px;
+	padding-right: 80px;
+	float:left;
+}
+
+.di-single img {
+	max-height: 100%;
+}
+
+
+@media only screen and (min-width:768px) {
+	#drag-images{
+		height: 400px;
+	}
+	.di-cont {
+		height: 417px;
+	}
+	.di-single-holder {
+		height: 400px;
+	}
+	.di-single {
+		height: 400px;
+	}
+}
+@media only screen and (min-width: 992px) {
+	#drag-images{
+		height: 500px;
+	}
+	.di-cont {
+		height: 517px;
+	}
+	.di-single-holder {
+		height: 500px;
+	}
+	.di-single {
+		height: 500px;
+	}
 }
 @media only screen and (min-width: 1200px) {}
+
+
+
+
+
+
 
