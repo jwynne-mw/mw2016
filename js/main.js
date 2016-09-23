@@ -13,7 +13,7 @@ $(function() {
 			tempTop=75,
 			isSlower;
 
-  // $(this).scrollTop(0);
+  $(this).scrollTop(0);
 	setSlideMenu();
 	setHomeHero();
 	runSlideShow();

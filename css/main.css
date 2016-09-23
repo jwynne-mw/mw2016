@@ -1352,30 +1352,22 @@ a.btn-sqly:hover {
 }
 
 .pag-holder {
-	height: 65px;
+	height: auto;
 	width: 100%;
 }
 
 .pag-next{
-	position: absolute;
-	right: 0;
-	top: 0;
-	text-align: right;
+	margin: 15px 0;
 	cursor: pointer;
 }
 .pag-all {
-	position: absolute;
-	top: 0;
-	left: 50%;
 	width: 50px;
 	height: 50px;
-	margin: 8px 0 0 -25px;
+	margin: 0 auto;
 	cursor: pointer;
 }
 .pag-prev{
-	position: absolute;
-	top: 0;
-	left: 0;
+	margin: 15px 0;
 	cursor: pointer;
 }
 
@@ -1475,3 +1467,39 @@ a.btn-sqly:hover {
 	right: -3px;
 	top: 39px;
 }
+
+@media only screen and (min-width:768px) {
+	.pag-holder {
+		height: 65px;
+		width: 100%;
+	}
+	.pag-next{
+		position: absolute;
+		right: 0;
+		top: 0;
+		text-align: right;
+		margin: 0;
+	}
+	.pag-all {
+		position: absolute;
+		top: 0;
+		left: 50%;
+		width: 50px;
+		height: 50px;
+		margin: 8px 0 0 -25px;
+	}
+	.pag-prev{
+		position: absolute;
+		top: 0;
+		left: 0;
+		margin: 0;
+	}
+
+
+}
+@media only screen and (min-width: 992px) {}
+@media only screen and (min-width: 1200px) {}
+
+
+
+

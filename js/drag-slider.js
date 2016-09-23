@@ -26,6 +26,11 @@ $(function() {
   	});
  	});
 
+ 	$('#drag-images').on('touchend mouseleave',function(){
+ 		$('#drag-icon').css('z-index',100);
+ 		$('#drag-icon').animate({opacity: 1	}, 500);
+ 	});
+
   $win.resize(function() {
   	diWidth=0;
   	setSliderWidth();
