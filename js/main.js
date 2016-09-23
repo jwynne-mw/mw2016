@@ -13,7 +13,7 @@ $(function() {
 			tempTop=75,
 			isSlower;
 
-  $(this).scrollTop(0);
+  // $(this).scrollTop(0);
 	setSlideMenu();
 	setHomeHero();
 	runSlideShow();
@@ -38,7 +38,7 @@ $(function() {
 	$('#scroll-arrow').click(function(){
 
 		if($(this).hasClass('down')){
-			var firstEl = ($(".sweet-spot").offset().top)-50;
+			var firstEl = ($("section:eq(3)").offset().top)-50;
 			$('html, body').animate({
 			    scrollTop: firstEl
 			}, 500);

@@ -56,6 +56,13 @@ h2 {
 	font-family: 'Domine', serif;
 	font-weight: normal;	
 }
+h3{}
+h4{
+	color:#000;
+	font-size: 2.5rem;
+	line-height: 3.0rem;
+	font-weight: normal;
+}
 
 p {
 	color: #808080;
@@ -1068,6 +1075,8 @@ a.btn-sqly:hover {
 	top: 0;
 	overflow: hidden;
 	cursor: pointer;
+	-webkit-transition: all .25s; /* Safari */
+  transition: all .25s;
 }
 
 .arrow-cont .right img{
@@ -1084,6 +1093,8 @@ a.btn-sqly:hover {
 	top: 0;
 	overflow: hidden;
 	cursor: pointer;
+	-webkit-transition: all .25s; /* Safari */
+  transition: all .25s;
 }
 
 .arrow-cont .left img{
@@ -1091,6 +1102,13 @@ a.btn-sqly:hover {
 	height: 30px;
 	-webkit-transform: rotate(-90deg); /* Safari */
 	transform: rotate(-90deg)
+}
+
+.arrow-cont .right:hover {
+	right: -10px;
+}
+.arrow-cont .left:hover {
+	left: -10px;
 }
 
 .cs-copy {
@@ -1221,7 +1239,7 @@ a.btn-sqly:hover {
 
 }
 
-/* END Case Study  ***************************************************************************************/
+/* END Case Study  *************************************************************************************************/
 /*  Dragable image component ***************************************************************************************/
 
 #drag-images{
@@ -1324,11 +1342,136 @@ a.btn-sqly:hover {
 		height: 500px;
 	}
 }
-@media only screen and (min-width: 1200px) {}
 
+/*  END Dragable image component ***************************************************************************************/
+/*  Case Study Pagination component **********************************************************************************************/
 
+#case-pagination{
+	background-color: #fff;
+	padding: 200px 0;
+}
 
+.pag-holder {
+	height: 65px;
+	width: 100%;
+}
 
+.pag-next{
+	position: absolute;
+	right: 0;
+	top: 0;
+	text-align: right;
+	cursor: pointer;
+}
+.pag-all {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 50px;
+	height: 50px;
+	margin: 8px 0 0 -25px;
+	cursor: pointer;
+}
+.pag-prev{
+	position: absolute;
+	top: 0;
+	left: 0;
+	cursor: pointer;
+}
 
+.pag-prev:hover,
+.pag-next:hover {
+	opacity: .7;
+}
 
+.pag-holder h4 {
+	margin: 0;
+}
 
+.pag-holder p {
+	margin: 5px 0 0;
+	font-family: 'Domine', serif;
+	font-weight: normal;
+}
+
+.sq {
+	position: absolute;
+	height: 12px;
+	width: 12px;
+	display: block;
+	background-color: #000;
+	-webkit-transition: all .2s; /* Safari */
+	transition: all .2s;
+}
+
+#sq1 {
+	left: 0;
+	top: 0;
+}
+
+#sq2 {
+	left: 19px;
+	top: 0;
+}
+
+#sq3 {
+	right: 0;
+	top: 0;
+}
+#sq4 {
+	left: 0;
+	top: 18px;
+}
+
+#sq5 {
+	left: 19px;
+	top: 18px;
+}
+
+#sq6 {
+	right: 0;
+	top: 18px;
+}
+#sq7 {
+	left: 0;
+	top: 36px;
+}
+
+#sq8 {
+	left: 19px;
+	top: 36px;
+}
+
+#sq9 {
+	right: 0;
+	top: 36px;
+}
+
+.pag-all:hover #sq1{
+	left: -3px;
+	top: -3px;
+}
+.pag-all:hover #sq2{
+	top: -3px;
+}
+.pag-all:hover #sq3{
+	right: -3px;
+	top: -3px;
+}
+.pag-all:hover #sq4{
+	left: -3px;
+}
+.pag-all:hover #sq6{
+	right: -3px;
+}
+.pag-all:hover #sq7{
+	left: -3px;
+	top: 39px;
+}
+.pag-all:hover #sq8{
+	top: 39px;
+}
+.pag-all:hover #sq9{
+	right: -3px;
+	top: 39px;
+}

@@ -20,7 +20,7 @@ $(function() {
 
 
 
- 	$('#drag-images').mouseenter(function(){
+ 	$('#drag-images').on('touchstart mouseenter',function(){
  		$('#drag-icon').animate({opacity: 0	}, 500, function() {
     	$(this).css('z-index',-1);
   	});
