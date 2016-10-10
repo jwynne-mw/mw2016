@@ -1571,9 +1571,23 @@ a.btn-sqly:hover {
 		}
 
 #people img {
-	max-width:100%;
 	margin-bottom:2em;
 }
+ul#bios {
+	margin-bottom:1em;
+}
+	ul#bios li {
+		display:inline-block;
+		cursor:pointer;
+	}
+		ul#bios li:before {
+			content:"|";
+			display:inline-block;
+			margin-right:5px;
+		}
+			ul#bios li:first-child:before {
+				display:none;
+			}
 .bio-name {
 	font-family: 'Domine', serif;
 	font-size:2.5rem;
@@ -1595,6 +1609,12 @@ a.btn-sqly:hover {
 		padding:0;
 		margin:5em 0;
 	}
+	ul#bios {
+		margin-top:0;
+	}
+		ul#bios li {
+			display:block;
+		}
 }
 @media only screen and (min-width: 992px) {
 	.brand-logo:nth-child(-n+3) {
