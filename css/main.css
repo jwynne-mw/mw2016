@@ -513,6 +513,16 @@ footer #ft-links ul.ft-copy li a:hover {
 	margin-top: 0;
 }
 
+.sq-filters ul {
+	display:inline-block;
+	list-style-type:none;
+	padding:0;
+	margin:0 0 4em;
+}
+	.sq-filters ul li a {
+		color:#c04e27;
+	}
+
 .sq-single {
 	opacity:0;
 	cursor: pointer;
