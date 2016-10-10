@@ -1615,6 +1615,9 @@ ul#bios {
 		ul#bios li {
 			display:block;
 		}
+			ul#bios li:before {
+				display:none;
+			}
 }
 @media only screen and (min-width: 992px) {
 	.brand-logo:nth-child(-n+3) {
@@ -1628,3 +1631,21 @@ ul#bios {
 }
 
 /*  END Who We Are Layout **************************************************************************************/
+/*  Contact Page Layout **********************************************************************************************/
+
+#map {
+	height: 100%;
+	height: 676px;
+}
+
+@media only screen and (min-width:768px) {
+
+}
+@media only screen and (min-width: 992px) {
+
+}
+@media only screen and (min-width: 1200px) {
+
+}
+
+/*  END Contact Page Layout ******************************************************************************************/
