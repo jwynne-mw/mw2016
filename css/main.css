@@ -551,6 +551,10 @@ footer #ft-links ul.ft-copy li a:hover {
   filter: grayscale(0%);
 }
 
+.sq-single:hover h2 {
+	color:#c04e27;
+}
+
 .sq-btn-cont {
 	margin: 10px 0 125px;
 	text-align: center;
