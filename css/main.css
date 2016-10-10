@@ -1551,7 +1551,7 @@ a.btn-sqly:hover {
 		text-align:center;
 		margin-top:5em;
 	}
-		.brand-logo:first-child {
+		.brand-logo:nth-child(-n+2) {
 			margin-top:0;
 		}
 
@@ -1577,6 +1577,7 @@ a.btn-sqly:hover {
 .bio-name {
 	font-family: 'Domine', serif;
 	font-size:2.5rem;
+	color:#000;
 }
 .bio-title {
 	font-size:1.5rem;
