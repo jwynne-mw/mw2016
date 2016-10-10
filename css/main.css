@@ -70,6 +70,16 @@ p {
 	line-height: 3rem;
 }
 
+strong {
+	color:#000;
+}
+
+ul {
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+
 @media only screen and (min-width:768px) {
 	.page-container section:first-child {
 		padding-top:125px;
@@ -254,12 +264,6 @@ svg.logo-martin {
 .mn-cont {
 	float: none;
 	margin-top: 100px;
-}
-
-.mn-cont ul {
-	list-style: none;
-	margin: 0;
-	padding: 0;
 }
 
 .mn-cont ul li {}
@@ -515,13 +519,16 @@ footer #ft-links ul.ft-copy li a:hover {
 
 .sq-filters ul {
 	display:inline-block;
-	list-style-type:none;
 	padding:0;
 	margin:0 0 4em;
 }
 	.sq-filters ul li a {
 		color:#c04e27;
 	}
+
+.sq-row {
+	margin-bottom:50px;
+}
 
 .sq-single {
 	opacity:0;
@@ -1514,6 +1521,89 @@ a.btn-sqly:hover {
 @media only screen and (min-width: 992px) {}
 @media only screen and (min-width: 1200px) {}
 
+/*  END Case Study pagination component ***************************************************************************************/
+/*  Who We Are Layout ******************************************************************************************/
 
+#mission-statement {
+	background:#c04e27;
+}
+	#mission-statement p {
+		font-family: 'Domine', serif;
+		font-size:3rem;
+		line-height:1.7em;
+		color:#fff;
+		text-align:center;
+		margin:5em 0;
+	}
 
+#brands {
+	background:#000;
+	color:#fff;
+}
+	#brands h2 {
+		color:#fff;
+		margin:3em 0 0;
+	}
+	.brand-row {
+		margin:8em 0;
+	}
+	.brand-logo {
+		text-align:center;
+		margin-top:5em;
+	}
+		.brand-logo:first-child {
+			margin-top:0;
+		}
 
+#capabilities h2 {
+	margin:3em 0 0;
+}
+#capabilities ul {
+	padding:0;
+	margin:5em 0;
+}
+	#capabilities ul li {
+		color:#808080;
+		margin-top:1em;
+	}
+		#capabilities ul li:first-child {
+			margin-top:0;
+		}
+
+#people img {
+	max-width:100%;
+	margin-bottom:2em;
+}
+.bio-name {
+	font-family: 'Domine', serif;
+	font-size:2.5rem;
+}
+.bio-title {
+	font-size:1.5rem;
+	margin-bottom:1.5em;
+}
+.bio-content p {
+	margin:0;
+}
+
+@media only screen and (min-width:768px) {
+	.brand-logo:nth-child(-n+2) {
+		margin-top:0;
+	}
+	#capabilities ul {
+		padding:0;
+		margin:5em 0;
+	}
+}
+@media only screen and (min-width: 992px) {
+	.brand-logo:nth-child(-n+3) {
+		margin-top:0;
+	}
+}
+@media only screen and (min-width: 1200px) {
+	.brand-logo:nth-child(-n+4) {
+		margin-top:0;
+	}
+}
+
+/*  END Who We Are Layout **************************************************************************************/
