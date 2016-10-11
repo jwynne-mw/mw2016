@@ -44,7 +44,7 @@ $(function() {
 			}, 500);
 		}else{
 			$('html, body').animate({
-			    scrollTop: $("#progress-bar").offset().top
+			    scrollTop: $("body").offset().top
 			}, 1200);
 		}
 	});

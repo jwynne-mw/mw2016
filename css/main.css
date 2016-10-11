@@ -70,6 +70,16 @@ p {
 	line-height: 3rem;
 }
 
+strong {
+	color:#000;
+}
+
+ul {
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+
 @media only screen and (min-width:768px) {
 	.page-container section:first-child {
 		padding-top:125px;
@@ -254,12 +264,6 @@ svg.logo-martin {
 .mn-cont {
 	float: none;
 	margin-top: 100px;
-}
-
-.mn-cont ul {
-	list-style: none;
-	margin: 0;
-	padding: 0;
 }
 
 .mn-cont ul li {}
@@ -513,6 +517,19 @@ footer #ft-links ul.ft-copy li a:hover {
 	margin-top: 0;
 }
 
+.sq-filters ul {
+	display:inline-block;
+	padding:0;
+	margin:0 0 4em;
+}
+	.sq-filters ul li a {
+		color:#c04e27;
+	}
+
+.sq-row {
+	margin-bottom:50px;
+}
+
 .sq-single {
 	opacity:0;
 	cursor: pointer;
@@ -549,6 +566,10 @@ footer #ft-links ul.ft-copy li a:hover {
 .sq-single:hover img {
 	-webkit-filter: grayscale(0%);
   filter: grayscale(0%);
+}
+
+.sq-single:hover h2 {
+	color:#c04e27;
 }
 
 .sq-btn-cont {
@@ -1532,6 +1553,152 @@ nav.logo-white {
 @media only screen and (min-width: 992px) {}
 @media only screen and (min-width: 1200px) {}
 
+/*  END Case Study pagination component ***************************************************************************************/
+/*  Who We Are Layout ******************************************************************************************/
 
+#mission-statement {
+	background:#c04e27;
+}
+	#mission-statement p {
+		font-family: 'Domine', serif;
+		font-size:3rem;
+		line-height:1.7em;
+		color:#fff;
+		text-align:center;
+		padding:100px 0;
+		margin:0;
+	}
 
+#brands {
+	background:#000;
+	color:#fff;
+}
+	#brands h2 {
+		color:#fff;
+		margin:100px 0 20px;
+	}
+	.brand-row {
+		margin:70px 0;
+	}
+	.brand-logo {
+		text-align:center;
+		margin-top:5em;
+	}
+		.brand-logo:nth-child(-n+2) {
+			margin-top:0;
+		}
 
+#capabilities h2 {
+	margin:100px 0 20px;
+}
+#capabilities ul {
+	
+}
+	#capabilities ul li {
+		color:#808080;
+		margin-top:1em;
+	}
+
+#people h2 {
+	margin:100px 0 20px;
+}
+#people img {
+	margin-bottom:60px;
+}
+ul#bios {
+	margin-bottom:20px;
+}
+	ul#bios li {
+		display:inline-block;
+		cursor:pointer;
+	}
+		ul#bios li:before {
+			content:"|";
+			display:inline-block;
+			margin-right:5px;
+		}
+			ul#bios li:first-child:before {
+				display:none;
+			}
+.bio-name {
+	font-family: 'Domine', serif;
+	font-size:2.5rem;
+	color:#000;
+}
+.bio-title {
+	font-size:1.5rem;
+	margin-bottom:30px;
+}
+.bio-content p {
+	margin:0;
+}
+
+#culture h2 {
+	margin:100px 0 20px;
+}
+
+@media only screen and (min-width:768px) {
+	#mission-statement p {
+		padding:200px 0;
+	}
+	.brand-logo:nth-child(-n+2) {
+		margin-top:0;
+	}
+	#capabilities ul {
+		padding:0;
+		margin:80px 0;
+	}
+		#capabilities ul li:first-child {
+			margin-top:0;
+		}
+	ul#bios {
+		margin-top:0;
+	}
+		ul#bios li {
+			display:block;
+		}
+			ul#bios li:before {
+				display:none;
+			}
+}
+@media only screen and (min-width: 992px) {
+	.brand-row {
+		margin:150px 0;
+	}
+	.brand-logo:nth-child(-n+3) {
+		margin-top:0;
+	}
+}
+@media only screen and (min-width: 1200px) {
+	.brand-logo:nth-child(-n+4) {
+		margin-top:0;
+	}
+}
+
+/*  END Who We Are Layout **************************************************************************************/
+/*  Contact Page Layout **********************************************************************************************/
+
+#map {
+	height: 100%;
+	height: 300px;
+}
+
+#location h2 {
+	margin:100px 0 20px;
+}
+
+@media only screen and (min-width:768px) {
+	#map {
+		height: 400px;
+	}
+}
+@media only screen and (min-width: 992px) {
+	#map {
+		height: 676px;
+	}
+}
+@media only screen and (min-width: 1200px) {
+
+}
+
+/*  END Contact Page Layout ******************************************************************************************/
