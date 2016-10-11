@@ -575,6 +575,10 @@ a.btn-sqly:hover {
 	text-decoration: none;
 }
 
+.scroll-in {
+	opacity: 0;
+}
+
 .come-in {
   transform: translateY(50px);
   animation: come-in 1.5s ease forwards;
@@ -1011,13 +1015,33 @@ a.btn-sqly:hover {
 /* END Meat raffle  ***************************************************************************************/
 /* Case Study ***************************************************************************************/
 
+.white-cover {
+	background-color: #f5f5f5;
+	display: block;
+	width: 100%;
+	height: 100vh;
+	position: fixed;
+	z-index: 20000;
+}
+
+.logo-white svg,
+.logo-white svg.logo-williams,
+.logo-white svg.logo-martin,
+.logo-white svg.logo-m {
+	fill: #fff;
+}
+
+nav.logo-white {
+	background: transparent !important;
+}
+
 #cs-top {
 	background: linear-gradient( #3ab289 70%, #f5f5f5 30%);
 	overflow: hidden;
 	position: relative;
 	width: 100%;
 	padding-bottom: 200px;
-	min-height: 750px;
+	min-height: 650px;
 }
 
 
@@ -1113,7 +1137,7 @@ a.btn-sqly:hover {
 
 .cs-copy {
 	text-align: center;
-	margin-top: 60px;
+	margin-top: 120px;
 	z-index: 10;
 }
 
@@ -1123,6 +1147,10 @@ a.btn-sqly:hover {
   font-family: 'DINPro', sans-serif;
   color: #fff;
   margin: 0 0 20px;
+}
+
+.cs-copy h1 {
+	color:#fff;
 }
 
 .copy-holder {
@@ -1159,7 +1187,11 @@ a.btn-sqly:hover {
 	font-weight: normal;
 	color: #3ab289;	
 }
-
+@media only screen and (min-width:500px) {
+	#cs-top {
+		min-height: 750px;
+	}
+}
 
 @media only screen and (min-width:768px) {
 	#cs-top {

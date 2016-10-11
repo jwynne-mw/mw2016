@@ -38,7 +38,7 @@ $(function() {
 	$('#scroll-arrow').click(function(){
 
 		if($(this).hasClass('down')){
-			var firstEl = ($("section:eq(3)").offset().top)-50;
+			var firstEl = ($(".sweet-spot").offset().top)-50;
 			$('html, body').animate({
 			    scrollTop: firstEl
 			}, 500);
@@ -175,6 +175,8 @@ $(function() {
 			var screenBottom = winHeight+screenTop;
 			var topPercent = parseInt((screenTop/docHeight)*100);
 			var btmPercent = parseInt((screenBottom/docHeight)*100);
+			var csTopHeight = $('#cs-top').outerHeight();
+			csTopHeight = parseInt((csTopHeight*.7));
 			//for main nav 
 			if(winWidth<=768 && screenTop >= 75 && currScrollTop < screenTop){
 				$nav.addClass('nav-hide');
@@ -194,7 +196,7 @@ $(function() {
 			}
 
 			// for sq-up class
-			$('.sq-layout .scroll-in').each(function(i, el) {
+			$('.scroll-in').each(function(i, el) {
 		    var el = $(el);
 		    var elTop = el.offset().top;
 		    var elTopReal = elTop - screenTop;
@@ -212,6 +214,16 @@ $(function() {
 		  }else {
 		  	$('#scroll-arrow').removeClass('on');
 		  }
+
+		  if($("#case-study").length > 0 && screenTop>=csTopHeight){
+		  	$('nav').removeClass('logo-white');
+		  }else if($("#case-study").length > 0 && screenTop<csTopHeight){
+		  	$('nav').addClass('logo-white');
+		  }
+
+
+
+
 
 		 
 			currScrollTop = screenTop;
