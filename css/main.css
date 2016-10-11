@@ -1533,7 +1533,8 @@ a.btn-sqly:hover {
 		line-height:1.7em;
 		color:#fff;
 		text-align:center;
-		margin:5em 0;
+		padding:100px 0;
+		margin:0;
 	}
 
 #brands {
@@ -1570,10 +1571,10 @@ a.btn-sqly:hover {
 	margin:100px 0 20px;
 }
 #people img {
-	margin-bottom:2em;
+	margin-bottom:60px;
 }
 ul#bios {
-	margin-bottom:1em;
+	margin-bottom:20px;
 }
 	ul#bios li {
 		display:inline-block;
@@ -1594,7 +1595,7 @@ ul#bios {
 }
 .bio-title {
 	font-size:1.5rem;
-	margin-bottom:1.5em;
+	margin-bottom:30px;
 }
 .bio-content p {
 	margin:0;
@@ -1605,6 +1606,9 @@ ul#bios {
 }
 
 @media only screen and (min-width:768px) {
+	#mission-statement p {
+		padding:200px 0;
+	}
 	.brand-logo:nth-child(-n+2) {
 		margin-top:0;
 	}
