@@ -6,12 +6,9 @@ $(function() {
 
   setSliderWidth();
 
-  TweenLite.to($('.white-cover') , .5, {autoAlpha: 0, display:'none',delay:1.5});
-
   function setSliderWidth(){
   	$diSingle.each(function(){
 	  	var disWidth = $(this).outerWidth();
-	  	console.log(disWidth);
 	  	diWidth = diWidth+disWidth;
 	  });
 	  $('.di-single-holder').css({'width': diWidth+'px'});

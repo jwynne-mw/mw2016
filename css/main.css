@@ -1,5 +1,7 @@
 html {
     font-size: 62.5%;
+    -webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
 }
 
 body {
@@ -34,7 +36,7 @@ a:focus {
 		z-index: 1;
 }
 
-.page-container section:first-child {
+.page-container setion:first-child {
 	padding-top:75px;
 
 }
@@ -51,17 +53,29 @@ h1 {
 
 h2 {
 	color:#000;
-	font-size: 3rem;
+	font-size: 2.5rem;
 	line-height: 3.5rem;
 	font-family: 'Domine', serif;
 	font-weight: normal;	
 }
-h3{}
+h3{
+	color:#000;
+	font-size: 1.8rem;
+	line-height: 2.0rem;
+	text-transform: uppercase;
+	font-weight: 500;
+}
 h4{
 	color:#000;
 	font-size: 2.5rem;
 	line-height: 3.0rem;
 	font-weight: normal;
+}
+
+h5 {
+	color:#000;
+	font-size: 1.8rem;
+	line-height: 2.0rem;
 }
 
 p {
@@ -73,11 +87,27 @@ p {
 strong {
 	color:#000;
 }
+b {
+	font-weight: bold;
+	font-weight: 500;
+}
 
 ul {
 	list-style:none;
 	margin:0;
 	padding:0;
+}
+
+.bw-to-color {
+	-webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  -webkit-transition: all .7s; /* Safari */
+  transition: all .7s;
+}
+
+.bw-to-color:hover {
+	-webkit-filter: grayscale(0%);
+  filter: grayscale(0%);
 }
 
 @media only screen and (min-width:768px) {
@@ -231,34 +261,36 @@ svg.logo-martin {
 .nav-back {
 	display: block;
 	position:fixed;
-	background-color: #bc4e27;
+	background-color: #f5f5f5;
 	top:0;
 	left:0;
 	width: 100%;
 	height: 0;
 	opacity: 0;
-	z-index: -1;
-	-webkit-transition: opacity .4s; /* Safari */
-  transition: opacity .4s;
+
+	-webkit-transition: opacity 1s; /* Safari */
+  transition: opacity 1s;
 }
 
 .open .nav-back {
 	opacity: 1;
-	z-index: 100;
+
 }
 
 
 .main-nav {
-	/*background: #bc4e27;*/
-	height: 600px;
+	background: #f5f5f5;
+	height: 0;
 	width: 100%;
 	position: fixed;
 	top: 0;
-	left: 10000px;
+	left: 0;
 	z-index: 500;
 	display: block;
-	-webkit-transition: all .3s; /* Safari */
-  transition: all .3s;
+	opacity:0;
+	overflow:hidden;
+	-webkit-transition: opacity .8s; /* Safari */
+  transition: opacity .8s;
 }
 
 .mn-cont {
@@ -271,8 +303,8 @@ svg.logo-martin {
 .mn-cont ul li a:visited {
 	font-family: 'Domine', serif;
 	font-weight: lighter;	
-	color: #fff;
-	font-size: 3rem;
+	color: #bc4e27;
+	font-size: 2rem;
 	display:block;
 	width: 100%;
 	text-align: right;
@@ -299,12 +331,15 @@ html.open,
 	left: 0 !important;
 }
 
-.open svg,
 .open svg.logo-williams,
-.open svg.logo-martin,
-.open svg.logo-m {
-	fill: #fff;
+.open svg.logo-martin{
+	fill: #000000;
 }
+
+.open svg.logo-m {
+	fill: #bc4e27;
+}
+
 ul.mn-social,
 ul.mn-contact {
 	margin-top: 25px;
@@ -323,7 +358,7 @@ li.li-title {
 .mn-cont ul.mn-social li a,
 .mn-cont ul.mn-contact li a {
 	font-family: 'Domine', serif;
-	font-size: 1.7rem;
+	font-size: 1.5rem;
 	line-height: 2.0rem;
 	letter-spacing: 0;
 	color: #000;
@@ -335,7 +370,7 @@ li.li-title {
 }
 
 	a.tele {
-		margin-top: 20px;
+		margin-top: 35px;
 	}
 
 footer a.tele {
@@ -385,7 +420,6 @@ footer a.tele {
 		width: 300px;
 	}
 	.mn-cont ul li a {
-		font-size: 3.0rem;
 		width: auto;
 		display: block;
 		text-align: right;
@@ -420,7 +454,7 @@ footer a.tele {
 /* Footer  *****************************************************************************************/
 footer {
 	background: #000;
-	padding: 100px 0;
+	padding: 60px 0 100px;
 
 }
 
@@ -488,27 +522,27 @@ footer #ft-links ul.ft-copy li a:hover {
 }
 
 @media only screen and (min-width:768px) {
-	footer .logo-cont {
-		margin-bottom: 50px;
+	footer {
+		padding: 60px 0 100px;
 	}
+	footer .logo-cont {
+		margin-bottom: 35px;
+	}
+
 	footer .ft-link-cont {
 		padding: 0 15px;
 		min-height: 150px;
 	}
 
 	footer .ft-link-cont.ft-one {
-		min-height: 70px;
+		min-height: 73px;
 	}
 }
 @media only screen and (min-width: 992px) {
-	footer .logo-cont {
-		margin-bottom: 75px;
-	}
-	footer .ft-link-cont.ft-one {
-		min-height: 150px;
-	}
+
+
 }
-@media only screen and (min-width: 1200px) {}
+
 
 /* END Footer  *****************************************************************************************/
 /* Squares Layout **************************************************************************************/
@@ -620,9 +654,9 @@ a.btn-sqly:hover {
 }
 
 @media only screen and (min-width:768px) {
-	a.btn-sqly {
+	/*a.btn-sqly {
 		font-size: 2.5rem;
-	}
+	}*/
 }
 
 /* END Squares Layout **********************************************************************************/
@@ -630,11 +664,16 @@ a.btn-sqly:hover {
 
 #home-hero {
 	margin-bottom: 75px;
+	cursor: pointer;
 }
 
 .hh-cont {
 	overflow:hidden;
 	height: 500px;
+}
+
+.hh-cont-alt {
+	display: none;
 }
 
 .hero-copy-cont{
@@ -663,8 +702,8 @@ a.btn-sqly:hover {
 	font-size: 3.4rem;
 	line-height: 5rem;
 	letter-spacing: -1px;
-	-webkit-transition: all .7s; /* Safari */
-  transition: all .7s;
+	-webkit-transition: all .6s; /* Safari */
+  transition: all .6s;
 }
 
 .hc-copy .perm.in{
@@ -688,8 +727,8 @@ a.btn-sqly:hover {
 	font-family: 'Domine', serif;
 	font-size: 3rem;
 	line-height: 3.5rem;
-	-webkit-transition: all .5s; /* Safari */
-  transition: all .5s;
+	-webkit-transition: all .5s ease-out; /* Safari */
+  transition: all .5s ease-out;
 }
 
 .hc-copy .temp.in {
@@ -777,20 +816,20 @@ a.btn-sqly:hover {
 	.hc-copy{
 	  top: 0;
 	  right: 0;
-	  bottom: 0;
+	  bottom: 10%;
 	  left: 0;
 	  height: 67px;
 	}
 
 	.hc-copy .perm {
-		font-size: 4.5rem;
+		font-size: 4rem;
 		line-height: 5rem;
 		letter-spacing: -2px;
 		color: #000;
 	}
 
 	.hc-copy .temp{
-		font-size: 4rem;
+		font-size: 3.5rem;
 		line-height: 5rem;
 	}
 
@@ -843,8 +882,12 @@ a.btn-sqly:hover {
 		width: 75%;
 	}
 	.hc-copy .temp{
-		top:24px;
-		left: 184px;
+		top:49px;
+		left: 253px;
+	}
+
+	#who-page .hc-copy .temp{
+		left: 289px;
 	}
 	.hc-copy .temp.in {
 		opacity: 1;
@@ -852,7 +895,7 @@ a.btn-sqly:hover {
 	}
 	.hc-copy .temp.out {
 		opacity: 0;
-		top:-25px;
+		top:-50px;
 	}
 
 	.hc-links {
@@ -1052,6 +1095,16 @@ a.btn-sqly:hover {
 	fill: #fff;
 }
 
+.open .logo-white svg,
+.open .logo-white svg.logo-williams,
+.open .logo-white svg.logo-martin{
+	fill: #000000;
+}
+
+.open .logo-white svg.logo-m {
+	fill: #bc4e27;
+}
+
 nav.logo-white {
 	background: transparent !important;
 }
@@ -1102,6 +1155,7 @@ nav.logo-white {
   height: 70vw;
   z-index:1;
 }
+
 
 .arrow-cont {
 	position: relative;
@@ -1158,7 +1212,7 @@ nav.logo-white {
 
 .cs-copy {
 	text-align: center;
-	margin-top: 120px;
+	margin-top: 50px;
 	z-index: 10;
 }
 
@@ -1208,6 +1262,32 @@ nav.logo-white {
 	font-weight: normal;
 	color: #3ab289;	
 }
+
+
+
+.cs-custom-head .bi-img-holder .img-top {
+	background-image: none;
+	display: none;
+}
+
+.cs-custom-head .bi-img-holder .img-bottom {
+	background-image: none;
+	display: none;
+}
+
+.cs-custom-head #cs-top {
+	height: 100vh;
+	background: linear-gradient( #3ab289 99%, #f5f5f5 1%);
+	background-color:#3ab289;
+	background-image: url(../img/case-study/thr_robothead.png);
+  background-blend-mode: multiply;
+  background-size: 60%; 
+  background-repeat: no-repeat;
+  background-position: right bottom;
+}
+
+
+
 @media only screen and (min-width:500px) {
 	#cs-top {
 		min-height: 750px;
@@ -1217,6 +1297,10 @@ nav.logo-white {
 @media only screen and (min-width:768px) {
 	#cs-top {
 		min-height: 1000px;
+	}
+	.cs-custom-head #cs-top {
+		min-height: 600px;
+		background-size: 50%;
 	}
 	.cs-copy {
 		width:80%;
@@ -1243,7 +1327,9 @@ nav.logo-white {
 	}
 }
 @media only screen and (min-width:900px) {
-
+	.cs-custom-head #cs-top {
+		background-size: 40%;
+	}
 	.bi-img-holder {
 	  width: 900px;
 	  height: 630px;
@@ -1274,14 +1360,18 @@ nav.logo-white {
 		font-size: 3.5rem;
 		line-height: 4rem;
 		padding: 25px 0;
+		color: #000000;
 	}
 	.quote-holder{
-		width: 90%;
+		width: 95%;
 		margin:100px auto;
 	}
 
 }
 @media only screen and (min-width: 1200px) {
+	.cs-custom-head #cs-top {
+		background-size: 30%;
+	}
 	.copy-holder p {
 		width: 75%;
 	}
@@ -1358,7 +1448,7 @@ nav.logo-white {
 
 .di-single {
 	height: 300px;
-	padding-right: 80px;
+	/*padding-right: 80px;*/
 	float:left;
 }
 
@@ -1401,7 +1491,7 @@ nav.logo-white {
 
 #case-pagination{
 	background-color: #fff;
-	padding: 200px 0;
+	padding: 60px 0;
 }
 
 .pag-holder {
@@ -1412,16 +1502,18 @@ nav.logo-white {
 .pag-next{
 	margin: 15px 0;
 	cursor: pointer;
+	text-align: center;
 }
 .pag-all {
 	width: 50px;
 	height: 50px;
-	margin: 0 auto;
+	margin: 50px auto;
 	cursor: pointer;
 }
 .pag-prev{
 	margin: 15px 0;
 	cursor: pointer;
+	text-align: center;
 }
 
 .pag-prev:hover,
@@ -1431,6 +1523,11 @@ nav.logo-white {
 
 .pag-holder h4 {
 	margin: 0;
+}
+
+.pag-prev:hover h4, 
+.pag-next:hover h4 {
+	color: #bc4e27;
 }
 
 .pag-holder p {
@@ -1495,6 +1592,7 @@ nav.logo-white {
 .pag-all:hover #sq1{
 	left: -3px;
 	top: -3px;
+	background-color: #bc4e27;
 }
 .pag-all:hover #sq2{
 	top: -3px;
@@ -1502,16 +1600,20 @@ nav.logo-white {
 .pag-all:hover #sq3{
 	right: -3px;
 	top: -3px;
+	background-color: #a7a9ac;
 }
 .pag-all:hover #sq4{
 	left: -3px;
+	background-color: #a7a9ac;
 }
 .pag-all:hover #sq6{
 	right: -3px;
+	background-color: #bc4e27;
 }
 .pag-all:hover #sq7{
 	left: -3px;
 	top: 39px;
+	background-color: #bc4e27;
 }
 .pag-all:hover #sq8{
 	top: 39px;
@@ -1519,9 +1621,13 @@ nav.logo-white {
 .pag-all:hover #sq9{
 	right: -3px;
 	top: 39px;
+	background-color: #a7a9ac;
 }
 
 @media only screen and (min-width:768px) {
+	#case-pagination{
+		padding: 200px 0;
+	}
 	.pag-holder {
 		height: 65px;
 		width: 100%;
@@ -1546,6 +1652,11 @@ nav.logo-white {
 		top: 0;
 		left: 0;
 		margin: 0;
+		text-align: left;
+	}
+
+	.pag-all {
+		margin: 0 auto;
 	}
 
 
@@ -1557,21 +1668,32 @@ nav.logo-white {
 /*  Who We Are Layout ******************************************************************************************/
 
 #mission-statement {
-	background:#c04e27;
+	background-color:#c04e27;
+	-webkit-transition: background-color .25s; /* Safari */
+  transition: background-color .25s;
+}
+#mission-statement.color-out {
+	background-color:#f5f5f5;
 }
 	#mission-statement p {
 		font-family: 'Domine', serif;
 		font-size:3rem;
-		line-height:1.7em;
+		line-height:5rem;
+		font-weight: normal;
 		color:#fff;
 		text-align:center;
-		padding:100px 0;
-		margin:0;
+		
+		margin:0 auto;
+		width: 100%;
 	}
+	
 
 #brands {
-	background:#000;
+	background-color:#000;
 	color:#fff;
+}
+#brands.color-out {
+	background-color:#f5f5f5;
 }
 	#brands h2 {
 		color:#fff;
@@ -1583,10 +1705,59 @@ nav.logo-white {
 	.brand-logo {
 		text-align:center;
 		margin-top:5em;
+		height: 100px;
 	}
-		.brand-logo:nth-child(-n+2) {
-			margin-top:0;
-		}
+
+	.brand-logo img {
+		height: 40px;
+		position: absolute;
+  	top: 50%;
+  	left: 50%;
+  	transform: translate(-50%, -50%);
+	}
+
+	.brand-logo:nth-child(-n+2) {
+		margin-top:0;
+	}
+
+.brand-logo .logo-rj {
+	height: 21px;
+}
+.brand-logo .logo-chs {
+	height: 60px;
+}
+.brand-logo .logo-finnegans {
+	height: 32px;
+}
+.brand-logo .logo-moa {
+	height: 28px;
+}
+.brand-logo .logo-prime {
+	height: 50px;
+}
+.brand-logo .logo-twins {
+	height: 87px;
+}
+.brand-logo .logo-thrivent {
+	height: 30px;
+}
+.brand-logo .logo-wolverine {
+	height: 30px;
+}
+.brand-logo .logo-kubota {
+	height: 30px;
+}
+.brand-logo .logo-wc {
+	height: 59px;
+}
+.brand-logo .logo-hipposak {
+	height: 34px;
+}
+.brand-logo .logo-syngenta {
+	height: 44px;
+}
+
+
 
 #capabilities h2 {
 	margin:100px 0 20px;
@@ -1599,7 +1770,7 @@ nav.logo-white {
 		margin-top:1em;
 	}
 
-#people h2 {
+/*#people h2 {
 	margin:100px 0 20px;
 }
 #people img {
@@ -1632,13 +1803,81 @@ ul#bios {
 .bio-content p {
 	margin:0;
 }
+*/
+.hc-cont {
+	height: 60vh;
+	position: relative;
+}
 
-#culture h2 {
+
+#hero-copy h1 {
+	margin: 0;
+	display: block;
+	font-size: 4rem;
+	line-height: 5rem;
+	letter-spacing: -1px;
+	font-weight: 400;
+	text-transform: lowercase;
+	color: #000;
+	position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#hero-copy h1 span{
+	color: #c04e27;
+	font-family: 'Domine', serif;
+	font-size: 3.5rem;
+	line-height: 5rem;
+	letter-spacing: 0px;
+}
+
+#people {}
+
+#people h2:first-child {
 	margin:100px 0 20px;
 }
 
+#people .sq-single {
+	max-width: 250px;
+}
+
+.bio-info-cont {
+	position: absolute;
+	width: 66%;
+	left: 33%;
+	background-color: #f5f5f5;
+}
+
+.bio-info-cont h2 {
+	font-family: 'DINPro', sans-serif;
+	font-size: 2.5rem;
+	line-height: 3.0rem;
+	color: #000;
+	margin: 0;
+	font-weight: normal;
+	margin: 25px 0 5px !important;
+}
+
+.bio-info-cont p {
+	font-size: 1.6rem;
+	line-height: 1.9rem;
+	color:#808080;
+	font-family: 'Domine', serif;
+	font-weight: normal;
+	margin: 0 0 15px;
+}
+
+.bio p {
+	line-height: 1.9rem;
+}
+
+
+#fav-spots {
+	margin: 0 0 100px;
+}
 @media only screen and (min-width:768px) {
-	#mission-statement p {
+	#mission-statement {
 		padding:200px 0;
 	}
 	.brand-logo:nth-child(-n+2) {
@@ -1660,13 +1899,20 @@ ul#bios {
 			ul#bios li:before {
 				display:none;
 			}
+
+	#mission-statement p {
+		width: 87%;
+	}
 }
 @media only screen and (min-width: 992px) {
 	.brand-row {
-		margin:150px 0;
+		margin:60px 0 150px;
 	}
 	.brand-logo:nth-child(-n+3) {
 		margin-top:0;
+	}
+	#mission-statement p {
+		width: 100%;
 	}
 }
 @media only screen and (min-width: 1200px) {
@@ -1702,3 +1948,129 @@ ul#bios {
 }
 
 /*  END Contact Page Layout ******************************************************************************************/
+/*  Results Page Layout **********************************************************************************************/
+
+
+#results-page{}
+#results-page .sq-single {
+	margin: 0 auto 40px;
+}
+
+@media only screen and (min-width:768px) {
+	#results-page .sq-single {
+		margin: 0 auto 60px;
+	}
+}
+
+@media only screen and (min-width: 992px) {
+
+	#results-page .sq-single {
+		margin: 0 auto 150px;
+	}
+	}
+}
+
+/*  Results Page Layout **********************************************************************************************/
+
+
+#article-page{}
+.article-cont {
+	margin-bottom: 40px;
+}
+.article-cont h1 {
+	font-family: 'Domine', serif;
+	font-size: 3.2rem;
+	line-height: 4.2rem;
+	color: #000000;
+	margin-bottom: 50px;
+}
+
+p.art-quote {
+	color:#bc4f27;
+	font-family: 'Domine', serif;
+	font-size: 3.2rem;
+	line-height: 4.2rem;
+	text-align: center;
+}
+
+.article-cont a {
+	display: block;
+}
+
+.article-cont ul{
+	list-style: disc;
+	padding: 0 20px;
+}
+.article-cont ul li{
+	color: #808080;
+	font-size: 1.8rem;
+	line-height: 3rem;
+}
+
+.author-cont{}
+
+.author-cont .author-image{
+	float: left;
+	height: 160px;
+	width: 160px;
+	border-radius: 80px;
+	display: block;
+	background-image: url(../img/bio/tom2.jpg);
+	background-size: 160px 204px;
+	background-position: center center;
+	margin-right: 40px;
+}
+
+.author-cont .author-image.lori {
+	background-image: url(../img/bio/lori.jpg);
+}
+.author-cont .author-image.jason {
+	background-image: url(../img/bio/jason.jpg);
+}
+
+.author-cont .author-copy {
+	float: left;
+	padding-top: 50px;
+}
+
+.author-cont .author-copy h4 {
+	margin:0;
+}
+.author-cont .author-copy p {
+	margin: 0;
+}
+
+.sidebar-cont{
+	margin: 100px 0;
+}
+
+.sidebar-cont h5 {
+	font-family: 'DINPro', sans-serif;
+	font-weight: normal;
+	font-size: 2.0rem;
+	text-transform: uppercase;
+	text-align: right;
+	margin: 0;
+}
+
+.sidebar-cont ul{
+	padding-top: 15px;
+}
+.sidebar-cont ul li {
+		text-align: right;
+		padding: 5px 0;
+}
+.sidebar-cont ul li a {
+	font-size: 1.6rem;
+	line-height: 1.9rem;
+	color:#bc4f27;
+}
+
+
+#article-page #case-pagination {
+	margin-top: 80px;
+}
+
+
+
+
