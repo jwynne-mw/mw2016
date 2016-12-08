@@ -32,6 +32,10 @@ a:focus {
   transition: none !important;
 }
 
+.no-scroll {
+	overflow: hidden;
+}
+
 .page-container {
 		z-index: 1;
 }
@@ -1840,6 +1844,7 @@ ul#bios {
 
 #people .sq-single {
 	max-width: 250px;
+	height: auto;
 }
 
 .bio-info-cont {
@@ -1876,6 +1881,41 @@ ul#bios {
 #fav-spots {
 	margin: 0 0 100px;
 }
+
+#bio-take-over {
+	background-color: transparent;
+	width: 75vw;
+	height: 50vh;
+	position: fixed;
+	display: none;
+	z-index: 30000;
+	top: 50%;
+  	left: 50%;
+  	transform: translate(-50%, -50%);
+}
+
+#bio-take-over .bio-image {
+	width: 250px;
+	height: 100px;
+	display: block;
+}
+
+.cover-image {
+	position: fixed;
+	display: none;
+	z-index: 30001;
+	top: 0;
+	left:0;
+}
+.cover-image img{
+	max-width: 250px;
+}
+
+#bio-take-over.open,
+.cover-image.open {
+	display: block;
+}
+
 @media only screen and (min-width:768px) {
 	#mission-statement {
 		padding:200px 0;
@@ -1903,6 +1943,10 @@ ul#bios {
 	#mission-statement p {
 		width: 87%;
 	}
+	#people .sq-single {
+		overflow: hidden;
+		height: 400px;
+	}
 }
 @media only screen and (min-width: 992px) {
 	.brand-row {
@@ -1913,6 +1957,9 @@ ul#bios {
 	}
 	#mission-statement p {
 		width: 100%;
+	}
+	#people .sq-single {
+		height: 430px;
 	}
 }
 @media only screen and (min-width: 1200px) {

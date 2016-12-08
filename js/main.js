@@ -57,7 +57,19 @@ $(function() {
 
 	$('.sq-single').click(function(){
 		var dataURL = $(this).attr('data-url');
-		if(dataURL != null || dataURL != undefined){
+		if (dataURL == "#people"){
+			$('html').addClass('no-scroll');
+			var bioImgSrc = $(this).find('img').attr('src');
+			var newImage = '<img class="bioimage-out" src="'+bioImgSrc+'" alt="bio-image">';
+			var imgPosTop = $(this)[0].getBoundingClientRect().top;
+			var imgPosLeft = $(this)[0].getBoundingClientRect().left;
+			$('.cover-image').append(newImage);
+			$('#bio-take-over, .cover-image').addClass('open');
+			$('.cover-image').css({'top':imgPosTop,'left':imgPosLeft});
+			TweenLite.to($('.white-cover') , .75, {autoAlpha: 1, display:'block', onComplete: displayBioListing});
+			//alert(imgPos);
+			return;
+		}else if(dataURL != null || dataURL != undefined){
 			location.href = dataURL;
 		}
 	});
@@ -195,6 +207,12 @@ $(function() {
 			$('.hero-copy-cont, .hi-single').css('height','400px');
 			$('.hh-cont').css('height','600px');
 		}
+	}
+
+	function displayBioListing(){
+		var imgNewTop = $('#bio-take-over .bio-image')[0].getBoundingClientRect().top;
+		var imgNewLeft = $('#bio-take-over .bio-image')[0].getBoundingClientRect().left;
+		TweenLite.to($('.cover-image') , .75, {delay:.5,left:imgNewLeft,top:imgNewTop});
 	}
 
 
